@@ -9,9 +9,18 @@ document.addEventListener('DOMContentLoaded', function() {
         Array.from(subMenus).forEach(menu => menu.style.maxHeight = '0px');
     }
 
+    // Function to update the h1 text with the text from the span
+    function updateTitle(newTitle) {
+        const mainTitle = document.getElementById('main-title');
+        console.log(mainTitle);
+        console.log(newTitle);
+        mainTitle.textContent = newTitle;
+    }
+
     // Add click event listeners to all nav items
     Array.from(navItems).forEach(navItem => {
         let link = navItem.querySelector('.li-link');
+        let newTitle = navItem.querySelector('.item-label');
         link.addEventListener('click', function(event) {
             let subMenu = navItem.querySelector('.sub-menu');
 
@@ -28,6 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // Remove active class from all links and add to the clicked link
             Array.from(links).forEach(link => link.classList.remove('active', 'child-active'));
             link.classList.add('active');
+
+            // Update the main title
+            updateTitle(newTitle.textContent);
         });
     });
 
@@ -36,8 +48,11 @@ document.addEventListener('DOMContentLoaded', function() {
         let subLinks = subMenu.getElementsByClassName('li-link');
         Array.from(subLinks).forEach(subLink => {
             subLink.addEventListener('click', function(event) {
+                let newTitle = subLink.querySelector('.item-label');
                 Array.from(links).forEach(link => link.classList.remove('active', 'child-active'));
                 subLink.classList.add('active', 'child-active');
+                // Update the main title
+                updateTitle(newTitle.textContent);
                 event.stopPropagation();
             });
         });
