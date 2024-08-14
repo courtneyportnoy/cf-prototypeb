@@ -36,7 +36,7 @@ header > div {
 
 aside {
     background: #1f1f1f;
-    width: 350px;
+    width: 290px;
     height: 100%;
     margin-top: 80px;
     position: fixed;
@@ -81,7 +81,7 @@ aside {
 .i-accordion { 
     float: right;
     margin-top: 2px;
-    margin-right: 24px;
+    margin-right: 20px;
     background-image: url(icons/accordion.svg); 
 }
 
@@ -94,7 +94,7 @@ ul {
 
 li a {
     padding: 8px 0;
-    padding-left: 40px;
+    padding-left: 20px;
     border-left: 2px solid #1f1f1f;
     display: inline-block;
     width: 100%;
@@ -108,9 +108,6 @@ li a:hover,
 li a.active {
     background: rgba(238, 238, 238, .12);
     border-left: 2px solid white;
-}
-li a.active .i-accordion {
-    /* transform: rotate(180deg); */
 }
 a {
     text-decoration: none;
